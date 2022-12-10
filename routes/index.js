@@ -19,7 +19,6 @@ router.get('/', function(req, res, next) {
     res.render('index', {number, newNumber, result})
   })
   .catch((err) => { console.log(err)})
-  // res.render('index', { title: 'Express', number: number, newNumber: newNumber });
 });
 
 router.get('/countries', (req, res, next) => {
