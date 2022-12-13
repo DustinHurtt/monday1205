@@ -13,8 +13,10 @@ router.get('/', function(req, res, next) {
         resolve(newNumber * 2)
       }, 4000)
   })
-  // console.log(biggerNumber(newNumber))
-  biggerNumber.then((result) => {
+  console.log("This is the console.log:", biggerNumber)
+ 
+  biggerNumber
+  .then((result) => {
     console.log("This is the result", result)
     res.render('index', {number, newNumber, result})
   })
@@ -30,6 +32,9 @@ router.get('/countries', (req, res, next) => {
     .catch((err) => {
       console.log(err)
     })
+
+  let result = axios.get('https://ih-countries-api.herokuapp.com/countries')
+  console.log("This is the console.log:", result)
 })
 
 
